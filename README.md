@@ -58,7 +58,7 @@ Depois, acompanhe a implantação no GitHub e abra a URL indicada em Settings �
 
 ## Estado de publicação
 
-Repositório público criado: <https://github.com/ilevdoug/central-de-links>, branch `main`. Remote local: `https://github.com/ilevdoug/central-de-links.git`. A integração GitHub confirmou a conta `ilevdoug`, mas recusou a escrita com HTTP 403 (`Resource not accessible by integration`). Por isso, os arquivos são enviados por commits na interface autenticada do GitHub. O GitHub CLI e uma credencial para `git push` local não estão disponíveis. A implantação do Pages ainda precisa ser confirmada; este texto não anuncia publicação concluída.
+Repositório público criado: <https://github.com/ilevdoug/central-de-links>, branch `main`. Remote local: `https://github.com/ilevdoug/central-de-links.git`. A integração GitHub confirmou a conta `ilevdoug`, mas recusou a escrita com HTTP 403 (`Resource not accessible by integration`). Por isso, os arquivos são enviados por commits na interface autenticada do GitHub. O GitHub CLI e uma credencial para `git push` local não estão disponíveis. Pages foi ativado pela interface em Deploy from a branch → main → /(root). A implantação automática 40787696680 terminou com sucesso. Site confirmado: <https://ilevdoug.github.io/central-de-links/>. HTML e CSS públicos responderam HTTP 200 e foram comparados byte a byte com os arquivos locais.
 
 ## Verificações executadas em 28/10/2026
 
@@ -67,7 +67,7 @@ Repositório público criado: <https://github.com/ilevdoug/central-de-links>, br
 - Ausência de scripts, eventos JavaScript, formulários, assets externos, dependências e links provisórios: conferida.
 - Servidores HTTP temporários com a biblioteca padrão do Python: página e CSS responderam 200, com conteúdo íntegro, na raiz e em `/central-de-links/`.
 - Contraste calculado entre textos e fundos: mínimo de 5,89:1; botão normal de 8,71:1.
-- O código define uma coluna até 759 px, três colunas acima disso, botões de pelo menos 52 px e foco com contorno de 3 px. Isso foi inspecionado no código, sem confirmação visual.
-- Testes visuais em 360 px e 1280 px, rolagem horizontal, foco por Tab, abertura por clique e execução com JavaScript desativado **não foram executados**: não há navegador local executável; o navegador remoto não alcançou o servidor local. A página não contém JavaScript.
+- O código define uma coluna até 759 px e três colunas acima disso. No site publicado, em uma janela de 1363 × 936 px, foram confirmados três cartões, botões de 52 px, carregamento do CSS e ausência de rolagem horizontal. Tab percorreu os três links na ordem correta; cada foco exibiu contorno de 3 px. Uma captura registrou o resultado.
+- Testes nas larguras exatas de 360 px e 1280 px, abertura dos destinos por clique e execução com JavaScript desativado **não foram executados**. Não há navegador local executável; o navegador remoto não alcançou o servidor local, bloqueou acesso a arquivos locais e não oferece ajuste de viewport pela ferramenta disponível. Os destinos interpretados pelo navegador foram conferidos e são exatos. A página não contém JavaScript.
 - Consultas HTTP HEAD aos destinos originais: `sm8dzy.com` respondeu 200; `npcyog.com` e `gcx27r.com` responderam 403 neste ambiente. Essas respostas não confirmam disponibilidade em outros navegadores; os três endereços foram preservados.
-- URL pública e CSS em produção: não testados, pois a publicação está bloqueada pelo acesso ao GitHub.
+- URL pública, CSS em produção e caminhos sob `/central-de-links/`: aprovados. Os cinco arquivos remotos, incluindo `.nojekyll` com zero bytes, foram conferidos pelo Git e correspondem aos locais.
