@@ -1,549 +1,1027 @@
 :root {
   color-scheme: dark;
-  --fundo-abissal: #140308;
-  --fundo-imperial: #34060d;
-  --fundo-carmim: #590a15;
-  --jade-acento: #10b981;
-  --pergaminho-claro: #fffdf6;
-  --pergaminho-base: #f9eed4;
-  --texto: #fff8eb;
-  --texto-suave: #f7dfb9;
-  --titulo-cartao: #2d0e00;
-  --texto-cartao: #592507;
-  --gradiente-ouro-espelhado: linear-gradient(
+  /* Paleta Oficial — Modelo Ultracolorido V2 */
+  --fundo-profundo: #160b3d;
+  --azul-eletrico: #2454ff;
+  --magenta: #f62fb4;
+  --jade: #007e78;
+  --jade-cartao-escuro: #042227;
+  --jade-cartao-base: #021216;
+  --ciano: #37e5f3;
+  --coral: #ff655c;
+  --ouro-medio: #efaf24;
+  --ouro-reflexo: #fff1b5;
+  --ouro-sombra: #8e4b0b;
+  --texto-claro: #fff9ef;
+  --texto-botao: #211207;
+  --foco-visivel: #ffffff;
+
+  /* Gradiente de Ouro Metálico Ultraespelhado */
+  --grad-ouro-espelhado: linear-gradient(
     135deg,
-    #fffad6 0%,
-    #ffe268 20%,
-    #d48311 46%,
-    #fff4b8 68%,
-    #f0a824 84%,
-    #6e3800 100%
+    #703805 0%,
+    #efaf24 14%,
+    #fff1b5 28%,
+    #ffffff 36%,
+    #efaf24 48%,
+    #8e4b0b 62%,
+    #f5be38 76%,
+    #fff1b5 88%,
+    #ffffff 94%,
+    #6b3404 100%
   );
-  --gradiente-botao: linear-gradient(
-    180deg,
-    #fff9cf 0%,
-    #ffdf5e 28%,
-    #f29e18 76%,
-    #c76d06 100%
-  );
-  --gradiente-botao-hover: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #ffea85 32%,
-    #f9b125 80%,
-    #d97d0b 100%
-  );
-  --texto-botao: #2d0e00;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+html {
+  -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
 }
 
 body {
-  min-width: 280px;
+  margin: 0;
   min-height: 100vh;
-  min-height: 100svh;
-  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   place-items: center;
-  background:
-    radial-gradient(circle at 50% 16%, rgba(255, 204, 77, 0.22) 0%, transparent 48%),
-    radial-gradient(circle at 50% 24%, rgba(16, 185, 129, 0.14) 0%, transparent 56%),
-    radial-gradient(circle at 50% 0%, var(--fundo-carmim) 0%, var(--fundo-imperial) 50%, var(--fundo-abissal) 100%);
-  color: var(--texto);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.55;
+  padding: 14px 16px 26px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  line-height: 1.45;
+  color: var(--texto-claro);
+  background-color: var(--fundo-profundo);
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Cenário Oriental em Camadas (A + B + C) */
-.cenario-oriental {
+/* ==========================================================================
+   CENÁRIO DE FUNDO ULTRACOLORIDO E CAMADAS AMBIENTAIS ANIMADAS
+   ========================================================================== */
+.cena-ultracolorida {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  background-color: var(--fundo-profundo);
 }
 
-.camada-raios {
+.cenario-jardim {
   position: absolute;
-  top: -35%;
-  left: 50%;
-  width: 130vmax;
-  height: 130vmax;
-  transform: translateX(-50%);
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(255, 215, 90, 0.05) 0deg 9deg,
-    transparent 9deg 18deg
-  );
-  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, transparent 62%);
-  animation: giro-imperial 64s linear infinite;
+  inset: 0;
+  background-image: url("./assets/cenario-fundo.webp");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.98;
 }
 
-.camada-nevoa-jade {
+.halo-neon-multicolor {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 18% 78%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 82% 78%, rgba(244, 63, 94, 0.12) 0%, transparent 50%);
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(255, 241, 181, 0.22) 0%,
+      rgba(246, 47, 180, 0.2) 32%,
+      rgba(36, 84, 255, 0.18) 58%,
+      transparent 78%
+    ),
+    radial-gradient(
+      circle at 20% 42%,
+      rgba(55, 229, 243, 0.14) 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 80% 42%,
+      rgba(246, 47, 180, 0.15) 0%,
+      transparent 48%
+    );
 }
 
+/* Nuvens em Planos Distintos (18–25 s) */
 .camada-nuvens {
   position: absolute;
   inset: 0;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
-.nuvem {
+.nuvem-fantasia {
   position: absolute;
-  width: clamp(130px, 18vw, 210px);
   height: auto;
-  opacity: 0.48;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+  will-change: transform;
 }
 
-.nuvem-esq {
+.nuvem-d1 {
+  width: 240px;
   top: 7%;
-  left: 3%;
-  animation: flutuar-nuvem-esq 9s ease-in-out infinite;
+  left: 4%;
+  animation: deslocar-nuvem-distante 24s ease-in-out infinite alternate;
 }
 
-.nuvem-dir {
+.nuvem-d2 {
+  width: 250px;
   top: 9%;
-  right: 3%;
-  animation: flutuar-nuvem-dir 10s ease-in-out infinite;
+  right: 4%;
+  animation: deslocar-nuvem-distante 25s ease-in-out -8s infinite alternate-reverse;
 }
 
-.particula {
+.nuvem-p1 {
+  width: 200px;
+  top: 23%;
+  left: 6%;
+  animation: deslocar-nuvem-proxima 18s ease-in-out infinite alternate;
+}
+
+.nuvem-p2 {
+  width: 205px;
+  top: 25%;
+  right: 6%;
+  animation: deslocar-nuvem-proxima 20s ease-in-out -6s infinite alternate-reverse;
+}
+
+@keyframes deslocar-nuvem-distante {
+  0% {
+    transform: translate3d(-22px, 0, 0);
+  }
+  100% {
+    transform: translate3d(26px, -6px, 0);
+  }
+}
+
+@keyframes deslocar-nuvem-proxima {
+  0% {
+    transform: translate3d(-32px, 4px, 0);
+  }
+  100% {
+    transform: translate3d(34px, -8px, 0);
+  }
+}
+
+/* Lanternas com Balanço Leve (4–6 s, ~3 graus) */
+.lanterna-festival {
   position: absolute;
-  width: 13px;
-  height: 9px;
-  border-radius: 13px 2px 13px 2px;
-  background: linear-gradient(135deg, #fffbe0, #fde047 55%, #fb7185 100%);
-  box-shadow: 0 0 12px rgba(255, 219, 102, 0.65);
-  opacity: 0.58;
-  animation: flutuar-particula 6.5s ease-in-out infinite;
-}
-
-.particula.p1 { top: 20%; left: 11%; animation-delay: 0s; }
-.particula.p2 { top: 30%; right: 12%; animation-delay: 1.6s; }
-.particula.p3 { bottom: 24%; left: 8%; animation-delay: 3.1s; }
-.particula.p4 { bottom: 18%; right: 10%; animation-delay: 4.4s; }
-
-/* Estrutura Principal */
-.central {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 1060px);
-  min-width: 0;
-  padding: 40px 28px 36px;
-}
-
-.intro {
-  max-width: 680px;
-  min-width: 0;
-  margin: 0 auto 32px;
-  text-align: center;
-}
-
-.palco-guardiao {
-  width: min(100%, 340px);
-  margin: 0 auto 10px;
-  position: relative;
-}
-
-.svg-guardiao {
-  width: 100%;
+  top: -6px;
+  width: 68px;
   height: auto;
-  display: block;
-  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.62));
+  transform-origin: 50% 0%;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 16px rgba(255, 101, 92, 0.55));
+  will-change: transform;
 }
 
-/* Animações do Guardião Híbrido (A + B + C) */
-.anim-halo {
-  transform-origin: 190px 130px;
-  animation: pulsar-halo 4s ease-in-out infinite;
+.lanterna-esq {
+  left: max(12px, 4vw);
+  animation: balanco-lanterna 4.8s ease-in-out infinite alternate;
 }
 
-.anim-selo-externo {
-  transform-origin: 190px 130px;
-  animation: girar-selo 26s linear infinite;
+.lanterna-dir {
+  right: max(12px, 4vw);
+  animation: balanco-lanterna 5.6s ease-in-out -2.2s infinite alternate-reverse;
 }
 
-.anim-selo-interno {
-  transform-origin: 190px 130px;
-  animation: girar-selo-reverso 18s linear infinite;
+@keyframes balanco-lanterna {
+  0% {
+    transform: rotate(-3.1deg);
+  }
+  100% {
+    transform: rotate(3.1deg);
+  }
 }
 
-.anim-ofuda-esq {
-  animation: flutuar-ofuda-esq 3.6s ease-in-out infinite;
-}
-
-.anim-ofuda-dir {
-  animation: flutuar-ofuda-dir 4s ease-in-out infinite;
-}
-
-.anim-respiracao {
-  transform-origin: 190px 214px;
-  animation: respirar-mascote 3.6s ease-in-out infinite;
-}
-
-.anim-cabeca {
-  transform-origin: 190px 146px;
-  animation: inclinar-cabeca 4.4s ease-in-out infinite;
-}
-
-.anim-pata-convite {
-  transform-origin: 242px 158px;
-  animation: acenar-convite 2.3s ease-in-out infinite;
-}
-
-.anim-cauda {
-  transform-origin: 252px 188px;
-  animation: abanar-cauda 3.2s ease-in-out infinite;
-}
-
-.anim-olhos {
-  transform-origin: 190px 100px;
-  animation: piscar-olhos 5s ease-in-out infinite;
-}
-
-.anim-nuvens-base {
-  animation: deslizar-nuvens 5s ease-in-out infinite;
-}
-
-h1 {
-  margin: 0 0 12px;
-  font-size: clamp(2.1rem, 4.8vw, 3.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  font-weight: 850;
-  color: #fff7d1;
-  text-shadow:
-    0 2px 0 #4a1c00,
-    0 5px 18px rgba(0, 0, 0, 0.68);
-}
-
-.intro p {
-  margin: 0;
-  color: var(--texto-suave);
-  font-size: clamp(1rem, 2.2vw, 1.125rem);
-  font-weight: 500;
-}
-
-/* Grade de Três Acessos — Pergaminho Imperial, Filete de Jade e Ouro Ultraespelhado */
-.acessos {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.cartao {
-  min-width: 0;
-  position: relative;
-  padding: 24px 22px 22px;
-  border-radius: 22px;
-  background:
-    linear-gradient(180deg, var(--pergaminho-claro) 0%, var(--pergaminho-base) 100%) padding-box,
-    var(--gradiente-ouro-espelhado) border-box;
-  border: 4px solid transparent;
-  color: var(--titulo-cartao);
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.54),
-    0 0 0 1px rgba(52, 211, 153, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.92);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.cartao::before {
-  content: "";
+/* Discos Dourados e Reflexos (8–12 s) */
+.disco-dourado {
   position: absolute;
-  inset: 6px;
-  border-radius: 15px;
-  border: 1.5px solid rgba(180, 105, 14, 0.32);
-  pointer-events: none;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 12px rgba(255, 241, 181, 0.5));
+  will-change: transform;
 }
 
-.cartao:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 18px 36px rgba(0, 0, 0, 0.68),
-    0 0 22px rgba(255, 214, 89, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+.disco-1 {
+  width: 40px;
+  height: 40px;
+  top: 16%;
+  left: 14%;
+  animation: flutuar-disco-a 8.4s ease-in-out infinite;
 }
 
-.topo-cartao {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
+.disco-2 {
+  width: 38px;
+  height: 38px;
+  top: 19%;
+  right: 14%;
+  animation: flutuar-disco-b 9.8s ease-in-out -2.4s infinite;
 }
 
-.numero {
-  display: inline-grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, #88131b 0%, #45040a 100%);
-  border: 2px solid #eab308;
-  color: #fff8d6;
-  font-size: 0.875rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  box-shadow: 0 3px 8px rgba(69, 4, 10, 0.35);
-}
-
-.icone-tematico {
-  width: 46px;
-  height: 46px;
-  display: inline-grid;
-  place-items: center;
-  border-radius: 14px;
-  background: radial-gradient(circle, rgba(255, 224, 102, 0.34) 0%, rgba(16, 185, 129, 0.12) 100%);
-  border: 1px solid rgba(180, 105, 14, 0.35);
-}
-
-.icone-tematico svg {
+.disco-3 {
   width: 34px;
   height: 34px;
-  display: block;
+  bottom: 18%;
+  left: 8%;
+  animation: flutuar-disco-a 10.8s ease-in-out -4.1s infinite;
 }
 
-h2 {
-  margin: 0 0 4px;
-  font-size: 1.5rem;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  font-weight: 800;
-  color: var(--titulo-cartao);
+.disco-4 {
+  width: 36px;
+  height: 36px;
+  bottom: 16%;
+  right: 8%;
+  animation: flutuar-disco-b 11.8s ease-in-out -5.7s infinite;
 }
 
-.dominio {
-  margin: 0 0 22px;
-  color: var(--texto-cartao);
-  font-size: 0.95rem;
-  font-weight: 600;
-  overflow-wrap: anywhere;
+@keyframes flutuar-disco-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-12deg);
+  }
+  50% {
+    transform: translate3d(8px, -16px, 0) rotate(16deg);
+  }
 }
 
-/* Botão CTA Dourado Ultraespelhado */
-.botao {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 54px;
-  padding: 12px 16px;
-  border-radius: 14px;
-  border: 2px solid #6b3500;
-  background: var(--gradiente-botao);
-  color: var(--texto-botao);
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1.4;
-  text-decoration: none;
-  box-shadow:
-    0 5px 0 #5c2c00,
-    0 8px 16px rgba(69, 26, 3, 0.35),
-    inset 0 2px 1px rgba(255, 255, 255, 0.88);
-  transition: transform 0.15s ease, background 0.15s ease;
+@keyframes flutuar-disco-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(14deg) scale(0.96);
+  }
+  50% {
+    transform: translate3d(-10px, -18px, 0) rotate(-14deg) scale(1.05);
+  }
 }
 
-.botao::after {
-  content: "";
+/* Reflexos na Água na Base */
+.reflexos-lago {
   position: absolute;
-  top: -50%;
-  left: -120%;
-  width: 55%;
-  height: 200%;
+  bottom: 2%;
+  left: 50%;
+  width: min(760px, 92vw);
+  height: 44px;
+  transform: translateX(-50%);
+}
+
+.reflexo-agua {
+  position: absolute;
+  height: 4px;
+  border-radius: 999px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.74) 50%,
+    rgba(255, 241, 181, 0.75) 50%,
     transparent 100%
   );
-  transform: rotate(25deg);
-  animation: reflexo-ouro 4.2s ease-in-out infinite;
+  animation: cintilar-agua 5.5s ease-in-out infinite;
+}
+
+.r-agua-1 {
+  width: 180px;
+  left: 18%;
+  bottom: 18px;
+}
+
+.r-agua-2 {
+  width: 240px;
+  left: 38%;
+  bottom: 8px;
+  animation-delay: -1.8s;
+}
+
+.r-agua-3 {
+  width: 170px;
+  right: 16%;
+  bottom: 16px;
+  animation-delay: -3.4s;
+}
+
+@keyframes cintilar-agua {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleX(0.92);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleX(1.08);
+  }
+}
+
+/* ==========================================================================
+   PALCO PRINCIPAL: DRAGÃO JADE/OURO + TIGRE DOURADO ANIMADO + PLAQUETA
+   ========================================================================== */
+.central {
+  width: min(100%, 1060px);
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.heroi-ultracolorido {
+  text-align: center;
+  margin-bottom: 16px;
+  min-width: 0;
+}
+
+.palco-personagem {
+  position: relative;
+  width: min(100%, 620px);
+  margin: 0 auto -22px;
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  isolation: isolate;
+}
+
+/* Camada 1 do Palco: Dragão Ornamental em Jade/Turquesa e Ouro (Ciclo Sinuoso 12 s) */
+.camada-dragao {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 100%;
+  max-width: 660px;
+  transform: translateX(-48%);
+  z-index: 1;
   pointer-events: none;
 }
 
-.botao-conteudo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
+.img-dragao-jade {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 0 18px rgba(55, 229, 243, 0.35));
+  animation: dragao-sinuoso-12s 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes dragao-sinuoso-12s {
+  0%,
+  100% {
+    transform: translate3d(-8px, 0, 0) rotate(-1.2deg) scale(1);
+  }
+  50% {
+    transform: translate3d(10px, -7px, 0) rotate(1.4deg) scale(1.025);
+  }
+}
+
+/* Aura Neon Magenta/Ciano atrás do Tigre */
+.aura-neon-tigre {
+  position: absolute;
+  width: 72%;
+  height: 76%;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 241, 181, 0.45) 0%,
+    rgba(246, 47, 180, 0.32) 45%,
+    rgba(55, 229, 243, 0.22) 70%,
+    transparent 85%
+  );
+  filter: blur(14px);
   z-index: 1;
 }
 
-.icone-cta {
+/* Camada 2 do Palco: Tigre Dourado Sem Fundo (Respiração 4 s + Quadros Adicionais de Aceno e Piscar) */
+.camada-tigre-respiracao {
+  position: relative;
+  width: min(84%, 430px);
+  z-index: 2;
+  transform-origin: 50% 92%;
+  animation: tigre-respiracao-4s 4s ease-in-out infinite;
+  filter: drop-shadow(0 14px 26px rgba(10, 4, 28, 0.85))
+    drop-shadow(0 0 18px rgba(239, 175, 36, 0.38));
+  will-change: transform;
+}
+
+@keyframes tigre-respiracao-4s {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1, 1);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0) scale(1.026, 1.034);
+  }
+}
+
+.quadros-tigre {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 740 / 476;
+}
+
+.tigre-quadro {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.tigre-q1 {
+  z-index: 1;
+}
+
+/* Quadro 2: Gesto de Saudação da Pata e Cauda (Transição suave sobre a base) */
+.tigre-q2 {
+  z-index: 2;
+  opacity: 0;
+  animation: tigre-quadro-saudacao 2.6s ease-in-out infinite;
+  will-change: opacity;
+}
+
+@keyframes tigre-quadro-saudacao {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Quadro 3: Piscar do Olho e Expressão (Pulso periódico natural) */
+.tigre-q3 {
+  z-index: 3;
+  opacity: 0;
+  animation: tigre-quadro-piscar 4.6s ease-in-out infinite;
+  will-change: opacity;
+}
+
+@keyframes tigre-quadro-piscar {
+  0%,
+  39%,
+  49%,
+  89%,
+  100% {
+    opacity: 0;
+  }
+  43%,
+  45%,
+  93%,
+  95% {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   PLAQUETA IMPERIAL "Central de links" + TÍTULO E SUBTÍTULO
+   ========================================================================== */
+.plaqueta-imperial-wrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.plaqueta-imperial {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 38px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, #650933 0%, #3d041e 55%, #240212 100%) padding-box,
+    var(--grad-ouro-espelhado) border-box;
+  border: 4px solid transparent;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.78),
+    0 0 22px rgba(246, 47, 180, 0.35),
+    inset 0 0 0 2px rgba(255, 241, 181, 0.45),
+    inset 0 8px 16px rgba(246, 47, 180, 0.25);
+}
+
+.plaqueta-titulo {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fff1b5 35%,
+    #efaf24 75%,
+    #c8760a 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--ouro-reflexo);
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.75);
+}
+
+/* Asas laterais de Jade Imperial da Plaqueta */
+.ornamento-jade {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 36px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 35%,
+    var(--ciano) 0%,
+    var(--jade) 65%,
+    #023836 100%
+  );
+  border: 3px solid var(--ouro-medio);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.65),
+    inset 0 0 6px rgba(255, 255, 255, 0.6);
+  z-index: -1;
+}
+
+.ornamento-jade-esq {
+  left: -18px;
+}
+
+.ornamento-jade-dir {
+  right: -18px;
+}
+
+.joia-topo-plaqueta,
+.joia-base-plaqueta {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateX(-50%) rotate(45deg);
+  background: radial-gradient(circle, var(--ciano) 0%, var(--jade) 80%);
+  border: 2px solid var(--ouro-reflexo);
+  border-radius: 3px;
+}
+
+.joia-topo-plaqueta {
+  top: -8px;
+}
+
+.joia-base-plaqueta {
+  bottom: -8px;
+}
+
+.borla-plaqueta {
+  position: absolute;
+  top: 85%;
+  width: 10px;
+  height: 28px;
+  border-radius: 3px 3px 6px 6px;
+  background: linear-gradient(180deg, var(--ouro-medio) 0%, var(--coral) 30%, #b8143a 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  transform-origin: 50% 0%;
+  animation: balanco-lanterna 4.4s ease-in-out infinite alternate;
+}
+
+.borla-esq {
+  left: -12px;
+}
+
+.borla-dir {
+  right: -12px;
+  animation-delay: -2.2s;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.75rem, 3.8vw, 2.55rem);
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  color: var(--texto-claro);
+  text-shadow:
+    0 2px 0 #260d4d,
+    0 4px 14px rgba(0, 0, 0, 0.92),
+    0 0 22px rgba(246, 47, 180, 0.4);
+}
+
+.subtitulo {
+  margin: 0 auto;
+  max-width: 56ch;
+  color: var(--texto-claro);
+  font-size: clamp(0.92rem, 1.9vw, 1.05rem);
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+/* ==========================================================================
+   CARTÕES ESCUROS EM JADE COM MOLDURAS DOURADAS ESPELHADAS E REFLEXO OCASIONAL
+   ========================================================================== */
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.cartao {
+  position: relative;
+  display: grid;
+  /* No celular (<780px): layout horizontal compacto fiel à coluna direita da referência! */
+  grid-template-columns: 118px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      180deg,
+      #063138 0%,
+      var(--jade-cartao-escuro) 48%,
+      var(--jade-cartao-base) 100%
+    )
+    padding-box,
+    var(--grad-ouro-espelhado) border-box;
+  border: 3.5px solid transparent;
+  box-shadow:
+    0 14px 30px rgba(5, 2, 18, 0.85),
+    0 0 18px rgba(55, 229, 243, 0.22),
+    inset 0 0 0 1.5px rgba(255, 241, 181, 0.36);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Moldura interna fina dourada */
+.cartao::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 241, 181, 0.32);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Reflexo metálico ocasional nas molduras (sem piscar o texto) */
+.cartao::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 241, 181, 0.03) 30%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(239, 175, 36, 0.05) 70%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  pointer-events: none;
+  z-index: 2;
+  animation: reflexo-moldura-ocasional 9s ease-in-out infinite;
+}
+
+.cartao:nth-child(2)::after {
+  animation-delay: 3s;
+}
+
+.cartao:nth-child(3)::after {
+  animation-delay: 6s;
+}
+
+@keyframes reflexo-moldura-ocasional {
+  0% {
+    left: -150%;
+  }
+  22%,
+  100% {
+    left: 190%;
+  }
+}
+
+/* Cantoneiras Douradas Esculpidas */
+.canto-ouro {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-color: var(--ouro-reflexo);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.canto-se {
+  top: 7px;
+  left: 7px;
+  border-width: 2.5px 0 0 2.5px;
+  border-top-left-radius: 6px;
+}
+
+.canto-sd {
+  top: 7px;
+  right: 7px;
+  border-width: 2.5px 2.5px 0 0;
+  border-top-right-radius: 6px;
+}
+
+.canto-ie {
+  bottom: 7px;
+  left: 7px;
+  border-width: 0 0 2.5px 2.5px;
+  border-bottom-left-radius: 6px;
+}
+
+.canto-id {
+  bottom: 7px;
+  right: 7px;
+  border-width: 0 2.5px 2.5px 0;
+  border-bottom-right-radius: 6px;
+}
+
+.cartao-ilustracao {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #042227;
+}
+
+.img-ilustracao-cartao {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.cartao-corpo {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+h2 {
+  margin: 0 0 2px;
+  font-size: clamp(1.22rem, 2.4vw, 1.5rem);
+  font-weight: 900;
+  color: var(--texto-claro);
+  letter-spacing: -0.01em;
+}
+
+.dominio {
+  margin: 0 0 10px;
+  color: var(--ouro-reflexo);
+  font-size: 0.94rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================================================
+   BOTÕES DOURADOS ESPELHADOS COM TEXTO MUITO ESCURO (#211207) E ESTABILIDADE
+   ========================================================================== */
+.botao {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--ouro-reflexo);
+  background-color: var(--ouro-medio);
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fff1b5 20%,
+    #efaf24 54%,
+    #b86b09 86%,
+    #f5be38 100%
+  );
+  color: var(--texto-botao);
+  font-weight: 900;
+  font-size: 0.98rem;
+  text-decoration: none;
+  box-shadow:
+    0 4px 0 var(--ouro-sombra),
+    0 8px 18px rgba(0, 0, 0, 0.65),
+    inset 0 2px 1px #ffffff;
+  transition:
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.botao-texto {
+  white-space: nowrap;
+}
+
+.icone-externo {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-}
-
-.seta-cta {
-  position: relative;
-  z-index: 1;
-  font-size: 1.15rem;
-  font-weight: 900;
+  color: var(--texto-botao);
 }
 
 .botao:hover {
-  background: var(--gradiente-botao-hover);
-  transform: translateY(-1px);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  filter: brightness(1.06);
+  box-shadow:
+    0 4px 0 var(--ouro-sombra),
+    0 10px 22px rgba(0, 0, 0, 0.75),
+    0 0 16px rgba(255, 241, 181, 0.65),
+    inset 0 2px 2px #ffffff;
 }
 
 .botao:focus,
 .botao:focus-visible {
-  outline: 3px solid var(--titulo-cartao);
-  outline-offset: 4px;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  outline: 3px solid var(--foco-visivel);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   RODAPÉ COM ORNAMENTO DOURADO E CONTROLE ACESSÍVEL DE PAUSA (PURO CSS)
+   ========================================================================== */
+.rodape-imperial {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.linha-aviso {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+}
+
+.traco-ouro {
+  width: clamp(32px, 10vw, 110px);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--ouro-medio) 60%,
+    var(--ouro-reflexo) 100%
+  );
+  position: relative;
+}
+
+.traco-dir {
+  background: linear-gradient(
+    90deg,
+    var(--ouro-reflexo) 0%,
+    var(--ouro-medio) 40%,
+    transparent 100%
+  );
 }
 
 .aviso {
-  margin-top: 28px;
-  color: var(--texto-suave);
-  text-align: center;
-  font-size: 0.875rem;
-}
-
-.aviso p {
   margin: 0;
-  font-weight: 600;
+  color: var(--texto-claro);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
 }
 
-/* Keyframes */
-@keyframes giro-imperial {
-  from { transform: translateX(-50%) rotate(0deg); }
-  to { transform: translateX(-50%) rotate(360deg); }
+.controle-movimento {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes girar-selo {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.controle-pausa-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-@keyframes girar-selo-reverso {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+.controle-pausa-rotulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(22, 11, 61, 0.92);
+  border: 1.5px solid var(--ouro-medio);
+  color: var(--texto-claro);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.65);
 }
 
-@keyframes flutuar-nuvem-esq {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(14px, -6px, 0); }
+.controle-pausa-rotulo:hover {
+  border-color: var(--ouro-reflexo);
+  background: rgba(36, 18, 92, 0.96);
 }
 
-@keyframes flutuar-nuvem-dir {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(-14px, 6px, 0); }
+.controle-pausa-input:focus + .controle-pausa-rotulo,
+.controle-pausa-input:focus-visible + .controle-pausa-rotulo {
+  outline: 3px solid var(--foco-visivel);
+  outline-offset: 3px;
 }
 
-@keyframes flutuar-particula {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0.42; }
-  50% { transform: translate3d(10px, -12px, 0) rotate(16deg); opacity: 0.85; }
+.indicador-pausa {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--ouro-medio);
+  box-shadow: 0 0 6px var(--ouro-reflexo);
 }
 
-@keyframes flutuar-ofuda-esq {
-  0%, 100% { transform: translate(38px, 52px) rotate(-11deg); }
-  50% { transform: translate(38px, 44px) rotate(-7deg); }
+.texto-retomar {
+  display: none;
 }
 
-@keyframes flutuar-ofuda-dir {
-  0%, 100% { transform: translate(314px, 48px) rotate(11deg); }
-  50% { transform: translate(314px, 40px) rotate(7deg); }
+.controle-pausa-input:checked + .controle-pausa-rotulo .texto-pausar {
+  display: none;
 }
 
-@keyframes pulsar-halo {
-  0%, 100% { transform: scale(1); opacity: 0.85; }
-  50% { transform: scale(1.06); opacity: 1; }
+.controle-pausa-input:checked + .controle-pausa-rotulo .texto-retomar {
+  display: inline;
 }
 
-@keyframes respirar-mascote {
-  0%, 100% { transform: scale(1) translateY(0); }
-  50% { transform: scale(1.018, 0.988) translateY(-3px); }
+.controle-pausa-input:checked + .controle-pausa-rotulo .indicador-pausa {
+  border-radius: 50%;
+  background: var(--ciano);
 }
 
-@keyframes inclinar-cabeca {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-1.8deg) translateY(-2px); }
+/* Pausa imediata de todos os movimentos quando o controle acessível está marcado */
+body:has(#pausar-animacoes:checked) *,
+body:has(#pausar-animacoes:checked) *::before,
+body:has(#pausar-animacoes:checked) *::after {
+  animation-play-state: paused !important;
+  transition: none !important;
 }
 
-@keyframes acenar-convite {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-12deg) translateY(-4px); }
-}
-
-@keyframes abanar-cauda {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(9deg); }
-}
-
-@keyframes piscar-olhos {
-  0%, 45%, 49%, 100% { transform: scaleY(1); }
-  47% { transform: scaleY(0.1); }
-}
-
-@keyframes deslizar-nuvens {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(4px); }
-}
-
-@keyframes reflexo-ouro {
-  0%, 60% { left: -120%; }
-  100% { left: 160%; }
-}
-
-/* Responsividade Mobile (<= 759px) */
-@media (max-width: 759px) {
-  .central {
-    max-width: 540px;
-    padding: 24px 16px 28px;
+/* ==========================================================================
+   LAYOUT DESKTOP (>= 780px): TRÊS CARTÕES VERTICAIS EM UMA LINHA
+   ========================================================================== */
+@media (min-width: 780px) {
+  body {
+    padding: 18px 24px 28px;
   }
 
-  .intro {
-    margin-bottom: 22px;
-  }
-
-  .palco-guardiao {
-    width: min(100%, 248px);
-    margin-bottom: 6px;
-  }
-
-  .acessos {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  .grade {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
   }
 
   .cartao {
-    padding: 20px 18px 18px;
-  }
-
-  .topo-cartao {
-    margin-bottom: 12px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding: 14px 18px 20px;
   }
 
   .dominio {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    font-size: 0.98rem;
+  }
+
+  .botao {
+    min-height: 52px;
+    padding: 12px 20px;
+    font-size: 1.04rem;
   }
 }
 
-/* Redução de movimento */
+@media (max-width: 420px) {
+  .cartao {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .palco-personagem {
+    margin-bottom: -16px;
+  }
+
+  .camada-tigre-respiracao {
+    width: min(86%, 290px);
+  }
+
+  .lanterna-festival {
+    width: 50px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -551,10 +1029,11 @@ h2 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 
-  .botao::after {
-    display: none;
+  .cartao::after,
+  .tigre-q2,
+  .tigre-q3 {
+    display: none !important;
   }
 }

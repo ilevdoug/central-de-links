@@ -1,6 +1,6 @@
 # Central de links
 
-Página estática em português do Brasil com três acessos externos e identidade visual oriental inspirada em mascotes e interfaces de jogos (*Tigre Guardião da Fortuna + Círculo de Formação de Jade Xianxia + Talismãs Ofuda e Acabamento em Ouro 24k Ultraespelhado*). Construída somente com HTML5 e CSS (incluindo gráficos vetoriais SVG inline), funciona sem JavaScript e não usa dependências externas, coleta de dados ou processo de build.
+Página estática em português do Brasil com três acessos externos e identidade visual baseada no **Modelo Ultracolorido V2** (*Tigre Dourado Espelhado em camada independente com quadros adicionais para piscar e saudar + Dragão Ornamental em Jade/Turquesa e Ouro + Plaqueta Imperial "Central de links" + Jardim Noturno de Fantasia com Lanternas, Nuvens em Planos, Flores de Lótus e Reflexos na Água + Cartões em Jade Escuro e Ouro Espelhado com Pergaminho, Baú e Talismã + Controle Acessível de Pausa*). Construída somente com HTML5, CSS3 e assets locais otimizados em `.webp`, funciona sem JavaScript e não usa dependências externas, coleta de dados ou processo de build.
 
 ## Visualizar localmente
 
@@ -14,14 +14,15 @@ Abra <http://127.0.0.1:8000/>. Para simular o subdiretório do GitHub Pages, exe
 
 ## Editar
 
-- Textos, títulos, domínios, arte vetorial e links: `index.html`.
+- Textos, títulos, domínios, camadas e links: `index.html`.
 - Cores, gradientes metálicos, animações e layout: variáveis no início de `styles.css`; espaçamentos e animações ficam no mesmo arquivo.
+- Assets otimizados em camadas independentes (`.webp`): pasta `assets/` (`cenario-fundo.webp`, `dragao-jade-ouro.webp`, `tigre-q1-base.webp`, `tigre-q2-aceno.webp`, `tigre-q3-piscar.webp`, `ilustracao-pergaminho.webp`, `ilustracao-bau.webp`, `ilustracao-talisma.webp`).
 - Preserve os três endereços fornecidos, na ordem original. No HTML, `&amp;` representa o separador `&`, sem alterar o destino interpretado pelo navegador.
-- O CSS usa o caminho relativo `./styles.css`, compatível com a raiz e com subdiretórios.
+- O CSS usa o caminho relativo `./styles.css` e os assets usam `./assets/...`, compatíveis com a raiz e com subdiretórios.
 
 ## Publicar no GitHub Pages
 
-O repositório de destino deve ser público, chamado `central-de-links`, na conta pessoal escolhida, com os cinco arquivos deste projeto na raiz da branch `main`. Não é necessário criar workflow, CNAME ou build.
+O repositório de destino deve ser público, chamado `central-de-links`, na conta pessoal escolhida, com os arquivos de produção deste projeto na raiz da branch `main`. Não é necessário criar workflow, CNAME ou build.
 
 Com GitHub CLI disponível e autenticado, confira a conta com `gh auth status` e verifique se o nome está livre antes de criar o repositório:
 
@@ -48,8 +49,8 @@ Para cada atualização concluída neste projeto, siga esta rotina padrão:
 
 2. **Executar validações obrigatórias antes do commit:**
    - Conferir com parser os três `href`s interpretados, ordem, parâmetros, `&amp;`, `target="_blank"` e `rel="noopener noreferrer"`.
-   - Testar resposta HTTP 200 na raiz `/` e em `/central-de-links/`.
-   - Testar larguras de `360 px` e `1280 px`, ausência de rolagem horizontal, altura dos botões (`>= 48 px`), ordem de foco por teclado (`Tab`), contraste WCAG e `prefers-reduced-motion: reduce`.
+   - Testar resposta HTTP 200 na raiz `/` e em `/central-de-links/` para HTML, CSS e todos os assets de `./assets/`.
+   - Testar larguras de `360 px` e `1280 px`, ausência de rolagem horizontal, altura dos botões (`>= 48 px`), ordem de foco por teclado (`Tab`), contraste WCAG, controle de pausa (`#pausar-animacoes`) e `prefers-reduced-motion: reduce`.
 
 3. **Revisar diff, adicionar somente os arquivos do site pelos nomes e criar commit:**
    - Confirmar que o remote `upstream-site` aponta para `https://github.com/ilevdoug/central-de-links.git`.
@@ -57,8 +58,8 @@ Para cada atualização concluída neste projeto, siga esta rotina padrão:
      ```sh
      git diff --check
      git diff
-     git add index.html styles.css .nojekyll .gitignore README.md
-     git commit -m "Evolui central de links com direcao artistica oriental hibrida (A+B+C)"
+     git add index.html styles.css .nojekyll .gitignore README.md assets/cenario-fundo.webp assets/dragao-jade-ouro.webp assets/tigre-q1-base.webp assets/tigre-q2-aceno.webp assets/tigre-q3-piscar.webp assets/ilustracao-pergaminho.webp assets/ilustracao-bau.webp assets/ilustracao-talisma.webp
+     git commit -m "Atualiza central de links com Modelo Ultracolorido V2 e animacoes em camadas"
      git push upstream-site main
      ```
 
@@ -87,15 +88,15 @@ Para cada atualização concluída neste projeto, siga esta rotina padrão:
 
 Repositório público: <https://github.com/ilevdoug/central-de-links>, branch `main`. Remote local (`upstream-site`): `https://github.com/ilevdoug/central-de-links.git`. Site publicado: <https://ilevdoug.github.io/central-de-links/>.
 
-## Verificações executadas em 30/10/2026 (Versão Híbrida Oriental A + B + C)
+## Verificações executadas em 30/10/2026 (Modelo Ultracolorido V2 — Branch `feat/modelo-ultracolorido-v2`)
 
-- Existência dos cinco arquivos do site (`.gitignore`, `.nojekyll` vazio, `README.md`, `index.html`, `styles.css`) e referência relativa `./styles.css`: aprovados.
+- Existência dos arquivos do site (`.gitignore`, `.nojekyll` vazio, `README.md`, `index.html`, `styles.css` e 8 assets `.webp` em `assets/`) e referências relativas `./styles.css` e `./assets/...`: aprovados.
 - Leitura do HTML com parser: os três destinos decodificados correspondem exatamente aos originais, na ordem correta; `target="_blank"` e `rel="noopener noreferrer"` presentes nos três CTAs.
 - Ausência de scripts, eventos JavaScript, formulários, assets externos, dependências e links provisórios: conferida.
-- Servidores HTTP temporários com a biblioteca padrão do Python: página (`18.771 B`) e CSS (`11.850 B`) responderam HTTP 200, com conteúdo íntegro, na raiz `/` e em `/central-de-links/`.
-- Contraste WCAG calculado entre textos e fundos: Título H1 vs fundo = `16,54:1`; Título do cartão vs pergaminho = `15,50:1`; Domínio vs pergaminho = `10,76:1`; Botão dourado = `13,60:1` (todos nível AAA).
+- Servidores HTTP temporários com a biblioteca padrão do Python: página (`15.989 B`), CSS (`20.860 B`) e 8 assets `.webp` (`539.898 B` total) responderam HTTP 200 na raiz `/` e em `/central-de-links/`.
+- Contraste WCAG calculado entre textos e fundos: Título H1 vs fundo = `17,44:1`; Título H2 vs cartão jade escuro = `15,87:1`; Domínio vs cartão jade escuro = `14,65:1`; Botão dourado = `9,38:1` (todos nível AAA).
 - Testes executados em navegador real (Google Chrome Headless via DevTools Protocol) nas larguras exatas de `360 px` e `1280 px`:
-  - Em `360 px`: 1 coluna (`328 px`), `scrollWidth = 360` (ausência de rolagem horizontal), botões com `54 px` de altura (`>= 48 px`).
-  - Em `1280 px`: 3 colunas (`321,3 px × 3`), `scrollWidth = 1280` (ausência de rolagem horizontal), botões com `54 px` de altura (`>= 48 px`).
-  - Teclado (`Tab #1 → Tab #2 → Tab #3`): percorreu os três links na ordem correta, cada foco exibindo contorno visível de `3px solid rgb(45, 14, 0)`.
-  - Redução de movimento (`prefers-reduced-motion: reduce`): ocultou o reflexo especular (`botao::after { display: none }`) e reduziu a duração das animações a `0,01 ms`.
+  - Em `360 px`: 1 coluna (`328 px`), `scrollWidth = 360` (ausência de rolagem horizontal), botões com `50 px` de altura (`>= 48 px`).
+  - Em `1280 px`: 3 colunas (`338,7 px × 3`), `scrollWidth = 1280` (ausência de rolagem horizontal), botões com `52 px` de altura (`>= 48 px`).
+  - Teclado (`Tab #1 → Tab #2 → Tab #3 → Tab #4`): percorreu os três links e o controle de pausa na ordem correta, cada foco exibindo contorno visível de `3px solid rgb(255, 255, 255)`.
+  - Controle de pausa (`#pausar-animacoes`) e redução de movimento (`prefers-reduced-motion: reduce`): pausam imediatamente todos os movimentos automáticos sem JavaScript.
