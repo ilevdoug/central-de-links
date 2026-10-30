@@ -1,58 +1,247 @@
 :root {
   color-scheme: dark;
-  --fundo: #091628;
-  --texto: #f5f8fc;
-  --texto-suave: #b8c6d9;
-  --cartao: #f2f6fa;
-  --borda: #d4dee9;
-  --titulo-cartao: #12253d;
-  --texto-cartao: #506078;
-  --destaque: #38d9bd;
-  --destaque-hover: #69e7d1;
+  --fundo-abissal: #140308;
+  --fundo-imperial: #34060d;
+  --fundo-carmim: #590a15;
+  --jade-acento: #10b981;
+  --pergaminho-claro: #fffdf6;
+  --pergaminho-base: #f9eed4;
+  --texto: #fff8eb;
+  --texto-suave: #f7dfb9;
+  --titulo-cartao: #2d0e00;
+  --texto-cartao: #592507;
+  --gradiente-ouro-espelhado: linear-gradient(
+    135deg,
+    #fffad6 0%,
+    #ffe268 20%,
+    #d48311 46%,
+    #fff4b8 68%,
+    #f0a824 84%,
+    #6e3800 100%
+  );
+  --gradiente-botao: linear-gradient(
+    180deg,
+    #fff9cf 0%,
+    #ffdf5e 28%,
+    #f29e18 76%,
+    #c76d06 100%
+  );
+  --gradiente-botao-hover: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffea85 32%,
+    #f9b125 80%,
+    #d97d0b 100%
+  );
+  --texto-botao: #2d0e00;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
   min-width: 280px;
   min-height: 100vh;
   min-height: 100svh;
+  position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
-  background: var(--fundo);
+  background:
+    radial-gradient(circle at 50% 16%, rgba(255, 204, 77, 0.22) 0%, transparent 48%),
+    radial-gradient(circle at 50% 24%, rgba(16, 185, 129, 0.14) 0%, transparent 56%),
+    radial-gradient(circle at 50% 0%, var(--fundo-carmim) 0%, var(--fundo-imperial) 50%, var(--fundo-abissal) 100%);
   color: var(--texto);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
+/* Cenário Oriental em Camadas (A + B + C) */
+.cenario-oriental {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.camada-raios {
+  position: absolute;
+  top: -35%;
+  left: 50%;
+  width: 130vmax;
+  height: 130vmax;
+  transform: translateX(-50%);
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 215, 90, 0.05) 0deg 9deg,
+    transparent 9deg 18deg
+  );
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, transparent 62%);
+  animation: giro-imperial 64s linear infinite;
+}
+
+.camada-nevoa-jade {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 18% 78%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 82% 78%, rgba(244, 63, 94, 0.12) 0%, transparent 50%);
+}
+
+.camada-nuvens {
+  position: absolute;
+  inset: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.nuvem {
+  position: absolute;
+  width: clamp(130px, 18vw, 210px);
+  height: auto;
+  opacity: 0.48;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+}
+
+.nuvem-esq {
+  top: 7%;
+  left: 3%;
+  animation: flutuar-nuvem-esq 9s ease-in-out infinite;
+}
+
+.nuvem-dir {
+  top: 9%;
+  right: 3%;
+  animation: flutuar-nuvem-dir 10s ease-in-out infinite;
+}
+
+.particula {
+  position: absolute;
+  width: 13px;
+  height: 9px;
+  border-radius: 13px 2px 13px 2px;
+  background: linear-gradient(135deg, #fffbe0, #fde047 55%, #fb7185 100%);
+  box-shadow: 0 0 12px rgba(255, 219, 102, 0.65);
+  opacity: 0.58;
+  animation: flutuar-particula 6.5s ease-in-out infinite;
+}
+
+.particula.p1 { top: 20%; left: 11%; animation-delay: 0s; }
+.particula.p2 { top: 30%; right: 12%; animation-delay: 1.6s; }
+.particula.p3 { bottom: 24%; left: 8%; animation-delay: 3.1s; }
+.particula.p4 { bottom: 18%; right: 10%; animation-delay: 4.4s; }
+
+/* Estrutura Principal */
 .central {
-  width: min(100%, 1024px);
-  padding: 64px 32px 40px;
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1060px);
+  min-width: 0;
+  padding: 40px 28px 36px;
 }
 
 .intro {
-  max-width: 660px;
-  margin: 0 auto 48px;
+  max-width: 680px;
+  min-width: 0;
+  margin: 0 auto 32px;
   text-align: center;
 }
 
+.palco-guardiao {
+  width: min(100%, 340px);
+  margin: 0 auto 10px;
+  position: relative;
+}
+
+.svg-guardiao {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.62));
+}
+
+/* Animações do Guardião Híbrido (A + B + C) */
+.anim-halo {
+  transform-origin: 190px 130px;
+  animation: pulsar-halo 4s ease-in-out infinite;
+}
+
+.anim-selo-externo {
+  transform-origin: 190px 130px;
+  animation: girar-selo 26s linear infinite;
+}
+
+.anim-selo-interno {
+  transform-origin: 190px 130px;
+  animation: girar-selo-reverso 18s linear infinite;
+}
+
+.anim-ofuda-esq {
+  animation: flutuar-ofuda-esq 3.6s ease-in-out infinite;
+}
+
+.anim-ofuda-dir {
+  animation: flutuar-ofuda-dir 4s ease-in-out infinite;
+}
+
+.anim-respiracao {
+  transform-origin: 190px 214px;
+  animation: respirar-mascote 3.6s ease-in-out infinite;
+}
+
+.anim-cabeca {
+  transform-origin: 190px 146px;
+  animation: inclinar-cabeca 4.4s ease-in-out infinite;
+}
+
+.anim-pata-convite {
+  transform-origin: 242px 158px;
+  animation: acenar-convite 2.3s ease-in-out infinite;
+}
+
+.anim-cauda {
+  transform-origin: 252px 188px;
+  animation: abanar-cauda 3.2s ease-in-out infinite;
+}
+
+.anim-olhos {
+  transform-origin: 190px 100px;
+  animation: piscar-olhos 5s ease-in-out infinite;
+}
+
+.anim-nuvens-base {
+  animation: deslizar-nuvens 5s ease-in-out infinite;
+}
+
 h1 {
-  margin: 0 0 16px;
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  margin: 0 0 12px;
+  font-size: clamp(2.1rem, 4.8vw, 3.25rem);
   line-height: 1.12;
-  letter-spacing: -0.045em;
-  font-weight: 750;
+  letter-spacing: -0.03em;
+  font-weight: 850;
+  color: #fff7d1;
+  text-shadow:
+    0 2px 0 #4a1c00,
+    0 5px 18px rgba(0, 0, 0, 0.68);
 }
 
 .intro p {
   margin: 0;
   color: var(--texto-suave);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  font-weight: 500;
 }
 
+/* Grade de Três Acessos — Pergaminho Imperial, Filete de Jade e Ouro Ultraespelhado */
 .acessos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -61,64 +250,166 @@ h1 {
 
 .cartao {
   min-width: 0;
-  padding: 28px 24px 24px;
-  border: 1px solid var(--borda);
-  border-radius: 20px;
-  background: var(--cartao);
+  position: relative;
+  padding: 24px 22px 22px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, var(--pergaminho-claro) 0%, var(--pergaminho-base) 100%) padding-box,
+    var(--gradiente-ouro-espelhado) border-box;
+  border: 4px solid transparent;
   color: var(--titulo-cartao);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.54),
+    0 0 0 1px rgba(52, 211, 153, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.cartao::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 15px;
+  border: 1.5px solid rgba(180, 105, 14, 0.32);
+  pointer-events: none;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.68),
+    0 0 22px rgba(255, 214, 89, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.topo-cartao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
 }
 
 .numero {
   display: inline-grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  margin-bottom: 28px;
-  border: 1px solid var(--borda);
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  color: var(--texto-cartao);
-  font-size: 0.8125rem;
-  font-weight: 700;
+  background: linear-gradient(180deg, #88131b 0%, #45040a 100%);
+  border: 2px solid #eab308;
+  color: #fff8d6;
+  font-size: 0.875rem;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
+  box-shadow: 0 3px 8px rgba(69, 4, 10, 0.35);
+}
+
+.icone-tematico {
+  width: 46px;
+  height: 46px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  background: radial-gradient(circle, rgba(255, 224, 102, 0.34) 0%, rgba(16, 185, 129, 0.12) 100%);
+  border: 1px solid rgba(180, 105, 14, 0.35);
+}
+
+.icone-tematico svg {
+  width: 34px;
+  height: 34px;
+  display: block;
 }
 
 h2 {
   margin: 0 0 4px;
   font-size: 1.5rem;
-  line-height: 1.3;
-  letter-spacing: -0.025em;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: var(--titulo-cartao);
 }
 
 .dominio {
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   color: var(--texto-cartao);
+  font-size: 0.95rem;
+  font-weight: 600;
   overflow-wrap: anywhere;
 }
 
+/* Botão CTA Dourado Ultraespelhado */
 .botao {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  min-height: 52px;
+  min-height: 54px;
   padding: 12px 16px;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  background: var(--destaque);
-  color: var(--titulo-cartao);
+  border-radius: 14px;
+  border: 2px solid #6b3500;
+  background: var(--gradiente-botao);
+  color: var(--texto-botao);
   font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5;
+  font-weight: 800;
+  line-height: 1.4;
   text-decoration: none;
+  box-shadow:
+    0 5px 0 #5c2c00,
+    0 8px 16px rgba(69, 26, 3, 0.35),
+    inset 0 2px 1px rgba(255, 255, 255, 0.88);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.botao::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 55%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.74) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: reflexo-ouro 4.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.botao-conteudo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.icone-cta {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.seta-cta {
+  position: relative;
+  z-index: 1;
+  font-size: 1.15rem;
+  font-weight: 900;
 }
 
 .botao:hover {
-  background: var(--destaque-hover);
+  background: var(--gradiente-botao-hover);
+  transform: translateY(-1px);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.botao:focus {
+.botao:focus,
+.botao:focus-visible {
   outline: 3px solid var(--titulo-cartao);
   outline-offset: 4px;
   text-decoration: underline;
@@ -134,32 +425,136 @@ h2 {
 
 .aviso p {
   margin: 0;
+  font-weight: 600;
 }
 
+/* Keyframes */
+@keyframes giro-imperial {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes girar-selo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes girar-selo-reverso {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes flutuar-nuvem-esq {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(14px, -6px, 0); }
+}
+
+@keyframes flutuar-nuvem-dir {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-14px, 6px, 0); }
+}
+
+@keyframes flutuar-particula {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0.42; }
+  50% { transform: translate3d(10px, -12px, 0) rotate(16deg); opacity: 0.85; }
+}
+
+@keyframes flutuar-ofuda-esq {
+  0%, 100% { transform: translate(38px, 52px) rotate(-11deg); }
+  50% { transform: translate(38px, 44px) rotate(-7deg); }
+}
+
+@keyframes flutuar-ofuda-dir {
+  0%, 100% { transform: translate(314px, 48px) rotate(11deg); }
+  50% { transform: translate(314px, 40px) rotate(7deg); }
+}
+
+@keyframes pulsar-halo {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@keyframes respirar-mascote {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.018, 0.988) translateY(-3px); }
+}
+
+@keyframes inclinar-cabeca {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-1.8deg) translateY(-2px); }
+}
+
+@keyframes acenar-convite {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-12deg) translateY(-4px); }
+}
+
+@keyframes abanar-cauda {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(9deg); }
+}
+
+@keyframes piscar-olhos {
+  0%, 45%, 49%, 100% { transform: scaleY(1); }
+  47% { transform: scaleY(0.1); }
+}
+
+@keyframes deslizar-nuvens {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+@keyframes reflexo-ouro {
+  0%, 60% { left: -120%; }
+  100% { left: 160%; }
+}
+
+/* Responsividade Mobile (<= 759px) */
 @media (max-width: 759px) {
   .central {
     max-width: 540px;
-    padding: 48px 24px 32px;
+    padding: 24px 16px 28px;
   }
 
   .intro {
-    margin-bottom: 32px;
+    margin-bottom: 22px;
+  }
+
+  .palco-guardiao {
+    width: min(100%, 248px);
+    margin-bottom: 6px;
   }
 
   .acessos {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   .cartao {
-    padding: 24px;
+    padding: 20px 18px 18px;
   }
 
-  .numero {
-    margin-bottom: 20px;
+  .topo-cartao {
+    margin-bottom: 12px;
   }
 
   .dominio {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .botao::after {
+    display: none;
   }
 }
