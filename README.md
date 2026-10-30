@@ -1,6 +1,6 @@
 # Central de links
 
-Página estática em português do Brasil com três acessos externos e identidade visual oriental inspirada em mascotes e interfaces de jogos (*Tigre Guardião da Fortuna + Círculo de Formação de Jade Xianxia + Talismãs Ofuda e Acabamento em Ouro 24k Ultraespelhado*). Construída somente com HTML5 e CSS (incluindo gráficos vetoriais SVG inline), funciona sem JavaScript e não usa dependências externas, coleta de dados ou processo de build.
+Página estática em português do Brasil com três acessos externos, mascote **Stitch Imperial** animado com movimento articulado real e acabamento em **Ouro 24k Ultraespelhado** (*anéis orbitais espelhados, coroa e colar de ouro, lingote Yuanbao, cartões obsidiana-safira com bordas cromadas e barras de ouro 3D*). Construída somente com HTML5 e CSS (incluindo gráficos vetoriais SVG inline), funciona sem JavaScript e não usa dependências externas, coleta de dados ou processo de build.
 
 ## Visualizar localmente
 
@@ -87,15 +87,15 @@ Para cada atualização concluída neste projeto, siga esta rotina padrão:
 
 Repositório público: <https://github.com/ilevdoug/central-de-links>, branch `main`. Remote local (`upstream-site`): `https://github.com/ilevdoug/central-de-links.git`. Site publicado: <https://ilevdoug.github.io/central-de-links/>.
 
-## Verificações executadas em 30/10/2026 (Versão Híbrida Oriental A + B + C)
+## Verificações executadas em 30/10/2026 (Versão Stitch + Ouro 24k Ultraespelhado + Movimento Real)
 
 - Existência dos cinco arquivos do site (`.gitignore`, `.nojekyll` vazio, `README.md`, `index.html`, `styles.css`) e referência relativa `./styles.css`: aprovados.
 - Leitura do HTML com parser: os três destinos decodificados correspondem exatamente aos originais, na ordem correta; `target="_blank"` e `rel="noopener noreferrer"` presentes nos três CTAs.
 - Ausência de scripts, eventos JavaScript, formulários, assets externos, dependências e links provisórios: conferida.
-- Servidores HTTP temporários com a biblioteca padrão do Python: página (`18.771 B`) e CSS (`11.850 B`) responderam HTTP 200, com conteúdo íntegro, na raiz `/` e em `/central-de-links/`.
-- Contraste WCAG calculado entre textos e fundos: Título H1 vs fundo = `16,54:1`; Título do cartão vs pergaminho = `15,50:1`; Domínio vs pergaminho = `10,76:1`; Botão dourado = `13,60:1` (todos nível AAA).
+- Servidores HTTP temporários com a biblioteca padrão do Python: página (`20.908 B`) e CSS (`15.088 B`) responderam HTTP 200, com conteúdo íntegro, na raiz `/` e em `/central-de-links/`.
+- Contraste WCAG calculado entre textos e fundos: Título H1 vs fundo = `19,64:1`; Título do cartão vs cartão obsidiana = `17,32:1`; Domínio vs cartão obsidiana = `12,70:1`; Botão dourado = `13,67:1` (todos nível AAA).
 - Testes executados em navegador real (Google Chrome Headless via DevTools Protocol) nas larguras exatas de `360 px` e `1280 px`:
-  - Em `360 px`: 1 coluna (`328 px`), `scrollWidth = 360` (ausência de rolagem horizontal), botões com `54 px` de altura (`>= 48 px`).
-  - Em `1280 px`: 3 colunas (`321,3 px × 3`), `scrollWidth = 1280` (ausência de rolagem horizontal), botões com `54 px` de altura (`>= 48 px`).
-  - Teclado (`Tab #1 → Tab #2 → Tab #3`): percorreu os três links na ordem correta, cada foco exibindo contorno visível de `3px solid rgb(45, 14, 0)`.
-  - Redução de movimento (`prefers-reduced-motion: reduce`): ocultou o reflexo especular (`botao::after { display: none }`) e reduziu a duração das animações a `0,01 ms`.
+  - Em `360 px`: 1 coluna (`328 px`), `scrollWidth = 360` (ausência de rolagem horizontal), botões com `55 px` de altura (`>= 48 px`).
+  - Em `1280 px`: 3 colunas (`321,3 px × 3`), `scrollWidth = 1280` (ausência de rolagem horizontal), botões com `55 px` de altura (`>= 48 px`).
+  - Teclado (`Tab #1 → Tab #2 → Tab #3`): percorreu os três links na ordem correta, cada foco exibindo contorno visível de `3px solid rgb(255, 255, 255)`.
+  - Redução de movimento (`prefers-reduced-motion: reduce`): ocultou o reflexo especular (`botao::after { display: none }`) e reduziu a duração das animações a `0,01 ms` (`1e-05s`).

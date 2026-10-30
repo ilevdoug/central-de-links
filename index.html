@@ -8,205 +8,244 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="cenario-oriental" aria-hidden="true">
-      <div class="camada-raios"></div>
-      <div class="camada-nevoa-jade"></div>
-      <div class="camada-nuvens">
-        <svg class="nuvem nuvem-esq" viewBox="0 0 220 90" fill="none">
-          <path d="M25 70H185C201 70 212 58 210 43C208 29 195 21 182 24C175 10 158 4 143 10C132 14 126 24 126 34C116 28 102 31 97 41C92 50 98 60 107 60H116" stroke="url(#ouro-nuvem-1)" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M18 70C8 70 2 62 4 52C6 43 15 38 24 41C28 24 46 15 63 22C75 27 81 40 77 51C73 60 63 62 56 56" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.65"/>
-          <defs>
-            <linearGradient id="ouro-nuvem-1" x1="0" y1="0" x2="220" y2="90" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFF7C2"/>
-              <stop offset="50%" stop-color="#F5B82E"/>
-              <stop offset="100%" stop-color="#8C5205"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <svg class="nuvem nuvem-dir" viewBox="0 0 220 90" fill="none">
-          <path d="M195 70H35C19 70 8 58 10 43C12 29 25 21 38 24C45 10 62 4 77 10C88 14 94 24 94 34C104 28 118 31 123 41C128 50 122 60 113 60H104" stroke="url(#ouro-nuvem-2)" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M202 70C212 70 218 62 216 52C214 43 205 38 196 41C192 24 174 15 157 22C145 27 139 40 143 51C147 60 157 62 164 56" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.65"/>
-          <defs>
-            <linearGradient id="ouro-nuvem-2" x1="220" y1="0" x2="0" y2="90" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFF7C2"/>
-              <stop offset="50%" stop-color="#F5B82E"/>
-              <stop offset="100%" stop-color="#8C5205"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <div class="camada-particulas">
-        <span class="particula p1"></span>
-        <span class="particula p2"></span>
-        <span class="particula p3"></span>
-        <span class="particula p4"></span>
+    <div class="cenario-ouro-vivo" aria-hidden="true">
+      <div class="feixes-Imperiais"></div>
+      <div class="aurora-azul-ouro"></div>
+      <div class="moedas-3d-flutuantes">
+        <span class="moeda-3d m-1"></span>
+        <span class="moeda-3d m-2"></span>
+        <span class="moeda-3d m-3"></span>
+        <span class="moeda-3d m-4"></span>
+        <span class="moeda-3d m-5"></span>
+        <span class="moeda-3d m-6"></span>
       </div>
     </div>
 
     <main class="central">
       <header class="intro">
-        <div class="palco-guardiao" aria-hidden="true">
-          <svg class="svg-guardiao" viewBox="0 0 380 256" role="presentation">
+        <div class="palco-stitch-ouro" aria-hidden="true">
+          <svg class="svg-stitch-ouro" viewBox="0 0 420 290" role="presentation">
             <defs>
-              <linearGradient id="ouro-espelhado" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFFBE0"/>
-                <stop offset="22%" stop-color="#FFE169"/>
-                <stop offset="48%" stop-color="#D48311"/>
-                <stop offset="74%" stop-color="#FFF3B2"/>
-                <stop offset="100%" stop-color="#6E3800"/>
+              <!-- Gradiente Ouro 24k Ultraespelhado (Cromo Dourado) -->
+              <linearGradient id="ouro-ultraespelhado" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4A2400"/>
+                <stop offset="14%" stop-color="#D48817"/>
+                <stop offset="28%" stop-color="#FFF3A8"/>
+                <stop offset="36%" stop-color="#FFFFFF"/>
+                <stop offset="45%" stop-color="#F2B728"/>
+                <stop offset="56%" stop-color="#592D00"/>
+                <stop offset="72%" stop-color="#E59A18"/>
+                <stop offset="86%" stop-color="#FFF7C4"/>
+                <stop offset="93%" stop-color="#FFFFFF"/>
+                <stop offset="100%" stop-color="#6B3500"/>
               </linearGradient>
-              <linearGradient id="ouro-profundo" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#FFE885"/>
-                <stop offset="55%" stop-color="#E09619"/>
-                <stop offset="100%" stop-color="#6E3902"/>
+
+              <linearGradient id="ouro-chanfro-vertical" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="18%" stop-color="#FFE878"/>
+                <stop offset="52%" stop-color="#CA7B0B"/>
+                <stop offset="78%" stop-color="#3D1C00"/>
+                <stop offset="100%" stop-color="#F7C137"/>
               </linearGradient>
-              <linearGradient id="jade-imperial" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#6EE7B7"/>
-                <stop offset="50%" stop-color="#10B981"/>
-                <stop offset="100%" stop-color="#064E3B"/>
+
+              <!-- Pelagem Azul Stitch com Volume 3D -->
+              <radialGradient id="pelagem-stitch-cabeca" cx="44%" cy="35%" r="62%">
+                <stop offset="0%" stop-color="#60A5FA"/>
+                <stop offset="42%" stop-color="#2563EB"/>
+                <stop offset="78%" stop-color="#1E40AF"/>
+                <stop offset="100%" stop-color="#0F172A"/>
+              </radialGradient>
+
+              <linearGradient id="pelagem-stitch-corpo" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#3B82F6"/>
+                <stop offset="55%" stop-color="#1D4ED8"/>
+                <stop offset="100%" stop-color="#0F172A"/>
               </linearGradient>
-              <linearGradient id="laca-imperial" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#D91E2A"/>
-                <stop offset="100%" stop-color="#58060C"/>
+
+              <linearGradient id="pelagem-azul-claro" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#E0F2FE"/>
+                <stop offset="55%" stop-color="#93C5FD"/>
+                <stop offset="100%" stop-color="#3B82F6"/>
               </linearGradient>
-              <linearGradient id="pelagem-tigre" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#FFB636"/>
-                <stop offset="65%" stop-color="#F07810"/>
-                <stop offset="100%" stop-color="#B84304"/>
+
+              <linearGradient id="orelha-interna-stitch" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FBCFE8"/>
+                <stop offset="45%" stop-color="#F472B6"/>
+                <stop offset="100%" stop-color="#9D174D"/>
               </linearGradient>
-              <radialGradient id="halo-jade-ouro" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FFE885" stop-opacity="0.55"/>
-                <stop offset="55%" stop-color="#10B981" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="#1F0307" stop-opacity="0"/>
+
+              <radialGradient id="olho-stitch" cx="38%" cy="32%" r="65%">
+                <stop offset="0%" stop-color="#312E81"/>
+                <stop offset="45%" stop-color="#0F172A"/>
+                <stop offset="100%" stop-color="#020617"/>
+              </radialGradient>
+
+              <radialGradient id="nariz-stitch" cx="40%" cy="30%" r="65%">
+                <stop offset="0%" stop-color="#38BDF8"/>
+                <stop offset="45%" stop-color="#0369A1"/>
+                <stop offset="100%" stop-color="#082F49"/>
+              </radialGradient>
+
+              <radialGradient id="halo-ouro-intenso" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFE875" stop-opacity="0.65"/>
+                <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.24"/>
+                <stop offset="100%" stop-color="#090D16" stop-opacity="0"/>
               </radialGradient>
             </defs>
 
-            <!-- Elemento B: Halo e Círculo de Formação Xianxia em Jade e Ouro (Contra-rotativos) -->
-            <circle class="anim-halo" cx="190" cy="130" r="114" fill="url(#halo-jade-ouro)"/>
+            <!-- Camada 1: Halo Solar Dourado Pulsante e Anéis de Ouro Espelhado em Rotação Real -->
+            <circle class="anim-halo-ouro" cx="210" cy="148" r="126" fill="url(#halo-ouro-intenso)"/>
 
-            <g class="anim-selo-externo">
-              <circle cx="190" cy="130" r="102" fill="rgba(22, 4, 8, 0.78)" stroke="url(#ouro-espelhado)" stroke-width="4"/>
-              <circle cx="190" cy="130" r="93" fill="none" stroke="#34D399" stroke-width="1.6" stroke-dasharray="12 6 3 6"/>
-              <g stroke="#6EE7B7" stroke-width="2.2" stroke-linecap="round" opacity="0.85">
-                <path d="M180 33H200M182 37H198M180 223H200M182 227H190M194 227H198"/>
-                <path d="M93 120V140M97 122V138M287 120V128M287 132V140M283 122V138"/>
+            <g class="anim-anel-externo">
+              <circle cx="210" cy="148" r="108" fill="rgba(7, 12, 28, 0.82)" stroke="url(#ouro-ultraespelhado)" stroke-width="5.5"/>
+              <circle cx="210" cy="148" r="98" fill="none" stroke="#FFF6B8" stroke-width="2" stroke-dasharray="14 7 4 7"/>
+              <!-- Pontos cardeais em diamante de ouro espelhado -->
+              <polygon points="210,32 217,42 210,52 203,42" fill="url(#ouro-ultraespelhado)"/>
+              <polygon points="210,244 217,254 210,264 203,254" fill="url(#ouro-ultraespelhado)"/>
+              <polygon points="94,148 104,141 114,148 104,155" fill="url(#ouro-ultraespelhado)"/>
+              <polygon points="306,148 316,141 326,148 316,155" fill="url(#ouro-ultraespelhado)"/>
+            </g>
+
+            <g class="anim-anel-interno">
+              <polygon points="210,56 290,102 290,194 210,240 130,194 130,102" fill="none" stroke="url(#ouro-ultraespelhado)" stroke-width="2.4" opacity="0.85"/>
+              <polygon points="210,240 290,194 290,102 210,56 130,102 130,194" fill="none" stroke="#FFE875" stroke-width="1.8" opacity="0.7" transform="rotate(30 210 148)"/>
+            </g>
+
+            <!-- Moedas de Ouro Espelhado Orbitando -->
+            <g class="anim-moeda-orbita-esq">
+              <circle cx="62" cy="76" r="20" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.5"/>
+              <circle cx="62" cy="76" r="14" fill="none" stroke="#5C2E00" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <rect x="56" y="70" width="12" height="12" rx="2" fill="#0B132B" stroke="#FFFFFF" stroke-width="1.8"/>
+            </g>
+
+            <g class="anim-moeda-orbita-dir">
+              <circle cx="358" cy="72" r="20" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.5"/>
+              <circle cx="358" cy="72" r="14" fill="none" stroke="#5C2E00" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <rect x="352" y="66" width="12" height="12" rx="2" fill="#0B132B" stroke="#FFFFFF" stroke-width="1.8"/>
+            </g>
+
+            <!-- Camada 2: Personagem Principal — STITCH IMPERIAL COM OURO ESPELHADO (Movimento Articulado) -->
+            <g class="anim-stitch-pulo">
+              <!-- Pés/Patas Traseiras apoiadas no pedestal dourado -->
+              <g class="anim-patas-base">
+                <ellipse cx="158" cy="240" rx="24" ry="14" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3"/>
+                <circle cx="144" cy="238" r="5" fill="#1E293B"/>
+                <circle cx="156" cy="235" r="5.5" fill="#1E293B"/>
+                <circle cx="169" cy="237" r="5" fill="#1E293B"/>
+
+                <ellipse cx="262" cy="240" rx="24" ry="14" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3"/>
+                <circle cx="251" cy="237" r="5" fill="#1E293B"/>
+                <circle cx="264" cy="235" r="5.5" fill="#1E293B"/>
+                <circle cx="276" cy="238" r="5" fill="#1E293B"/>
+              </g>
+
+              <!-- Torso do Stitch + Corrente/Colar Imperial de Ouro 24k Espelhado -->
+              <g class="anim-stitch-torso">
+                <path d="M144 170C134 196 138 228 152 240H268C282 228 286 196 276 170C262 146 158 146 144 170Z" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3.5"/>
+
+                <!-- Pelagem peitoral azul-celeste macia com tufo característico -->
+                <path d="M170 168C182 160 198 160 210 166C222 160 238 160 250 168C258 192 252 226 210 234C168 226 162 192 170 168Z" fill="url(#pelagem-azul-claro)"/>
+                <path d="M196 168L204 156L210 167L218 156L224 168" fill="url(#pelagem-azul-claro)" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round"/>
+
+                <!-- Manto/Ombreiras Imperiais em Ouro Espelhado -->
+                <path d="M138 168C152 152 176 154 190 168L174 188C156 184 144 178 138 168Z" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.5"/>
+                <path d="M282 168C268 152 244 154 230 168L246 188C264 184 276 178 282 168Z" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.5"/>
+
+                <!-- Colar/Corrente Grossa de Ouro Espelhado + Medalhão Real -->
+                <path d="M154 168Q210 198 266 168" fill="none" stroke="url(#ouro-ultraespelhado)" stroke-width="10" stroke-linecap="round"/>
+                <path d="M154 168Q210 198 266 168" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
+                <circle cx="210" cy="188" r="16" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.8"/>
+                <polygon points="210,176 214,184 222,185 216,191 218,199 210,194 202,199 204,191 198,185 206,184" fill="#FFFFFF"/>
+
+                <!-- Braço Esquerdo segurando Lingote de Ouro Espelhado (Yuanbao) com Movimento -->
+                <g class="anim-stitch-braco-esq">
+                  <path d="M106 168C118 148 154 148 166 168L156 192C144 202 122 202 112 192Z" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.8"/>
+                  <ellipse cx="136" cy="166" rx="25" ry="10" fill="#FFFFFF" stroke="#B86B09" stroke-width="2"/>
+                  <ellipse cx="136" cy="161" rx="14" ry="7.5" fill="url(#ouro-chanfro-vertical)"/>
+                  <!-- Mãozinha azul do Stitch com garras segurando o ouro -->
+                  <ellipse cx="130" cy="188" rx="18" ry="14" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3"/>
+                  <circle cx="120" cy="184" r="4" fill="#0F172A"/>
+                  <circle cx="130" cy="181" r="4.2" fill="#0F172A"/>
+                  <circle cx="140" cy="184" r="4" fill="#0F172A"/>
+                </g>
+
+                <!-- Cabeça Articulada do Stitch + Orelhas Gigantes com Movimento Real -->
+                <g class="anim-stitch-cabeca">
+                  <!-- Orelha Esquerda Gigante com Recorte Característico (Flap Ativo) -->
+                  <g class="anim-orelha-stitch-esq">
+                    <path d="M144 98C96 58 42 42 26 62C14 78 36 108 64 118L54 124L74 128C98 134 126 126 144 114Z" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3.5" stroke-linejoin="round"/>
+                    <path d="M136 102C94 68 50 56 36 70C28 80 46 104 70 114L62 119L78 122C98 126 120 120 136 110Z" fill="url(#orelha-interna-stitch)"/>
+                    <!-- Brinco/Argola de Ouro Espelhado na orelha -->
+                    <circle cx="58" cy="121" r="7" fill="none" stroke="url(#ouro-ultraespelhado)" stroke-width="4"/>
+                  </g>
+
+                  <!-- Orelha Direita Gigante com Recorte Característico (Flap Ativo) -->
+                  <g class="anim-orelha-stitch-dir">
+                    <path d="M276 98C324 58 378 42 394 62C406 78 384 108 356 118L366 124L346 128C322 134 294 126 276 114Z" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3.5" stroke-linejoin="round"/>
+                    <path d="M284 102C326 68 370 56 384 70C392 80 374 104 350 114L358 119L342 122C322 126 300 120 284 110Z" fill="url(#orelha-interna-stitch)"/>
+                    <circle cx="362" cy="121" r="7" fill="none" stroke="url(#ouro-ultraespelhado)" stroke-width="4"/>
+                  </g>
+
+                  <!-- Formato da Cabeça do Stitch -->
+                  <path d="M132 114C130 68 162 48 210 48C258 48 290 68 288 114C294 144 268 168 210 168C152 168 126 144 132 114Z" fill="url(#pelagem-stitch-cabeca)" stroke="#090D16" stroke-width="3.8"/>
+
+                  <!-- Tufo de pelagem no topo da cabeça + Coroa Real de Ouro Espelhado -->
+                  <path d="M196 50L204 36L210 48L218 35L224 50" fill="#3B82F6" stroke="#090D16" stroke-width="2.5" stroke-linejoin="round"/>
+                  <g class="anim-coroa-ouro">
+                    <path d="M168 54L176 26L194 40L210 18L226 40L244 26L252 54Z" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.8" stroke-linejoin="round"/>
+                    <rect x="164" y="49" width="92" height="9" rx="4.5" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.2"/>
+                    <circle cx="210" cy="34" r="5.5" fill="#FFFFFF"/>
+                    <circle cx="184" cy="40" r="4" fill="#38BDF8"/>
+                    <circle cx="236" cy="40" r="4" fill="#38BDF8"/>
+                  </g>
+
+                  <!-- Manchas oculares azul-claras características do Stitch -->
+                  <ellipse cx="170" cy="108" rx="26" ry="28" transform="rotate(-12 170 108)" fill="url(#pelagem-azul-claro)" opacity="0.92"/>
+                  <ellipse cx="250" cy="108" rx="26" ry="28" transform="rotate(12 250 108)" fill="url(#pelagem-azul-claro)" opacity="0.92"/>
+
+                  <!-- Sobrancelhas expressivas -->
+                  <path d="M150 80Q168 70 184 82M236 82Q252 70 270 80" fill="none" stroke="#0F172A" stroke-width="4.5" stroke-linecap="round"/>
+
+                  <!-- Grandes Olhos Brilhantes do Stitch (com Piscada Real e Brilho Estelar) -->
+                  <g class="anim-olhos-stitch">
+                    <ellipse cx="172" cy="108" rx="17" ry="20" fill="url(#olho-stitch)" stroke="#020617" stroke-width="2.5"/>
+                    <circle cx="166" cy="99" r="6" fill="#FFFFFF"/>
+                    <circle cx="178" cy="116" r="3" fill="#FFF3A8"/>
+
+                    <ellipse cx="248" cy="108" rx="17" ry="20" fill="url(#olho-stitch)" stroke="#020617" stroke-width="2.5"/>
+                    <circle cx="242" cy="99" r="6" fill="#FFFFFF"/>
+                    <circle cx="254" cy="116" r="3" fill="#FFF3A8"/>
+                  </g>
+
+                  <!-- Grande Nariz Característico do Stitch -->
+                  <path d="M192 108C192 98 228 98 228 108C228 122 218 130 210 130C202 130 192 122 192 108Z" fill="url(#nariz-stitch)" stroke="#020617" stroke-width="2.8"/>
+                  <ellipse cx="204" cy="105" rx="6" ry="3" fill="#BAE6FD" opacity="0.8"/>
+
+                  <!-- Sorriso Largo e Carismático do Stitch -->
+                  <path d="M154 132Q210 148 266 132" fill="none" stroke="#090D16" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M164 134C174 158 246 158 256 134Z" fill="#881337" stroke="#090D16" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M184 144Q210 156 236 144Z" fill="#FB7185"/>
+                  <!-- Dentinhos brancos e dente de ouro espelhado -->
+                  <path d="M172 135L176 144L182 136ZM238 136L244 144L248 135Z" fill="#FFFFFF"/>
+                  <path d="M186 136L190 143L194 137Z" fill="url(#ouro-ultraespelhado)"/>
+                </g>
+              </g>
+
+              <!-- Braço Direito do Stitch Acenando com Energia Real -->
+              <g class="anim-stitch-aceno">
+                <path d="M266 164C286 144 306 112 320 120C334 128 318 164 288 182Z" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3.5"/>
+                <!-- Bracelete de Ouro Espelhado no pulso -->
+                <rect x="292" y="132" width="24" height="9" rx="4.5" transform="rotate(-32 304 136)" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2"/>
+                <circle cx="314" cy="118" r="20" fill="url(#pelagem-stitch-corpo)" stroke="#090D16" stroke-width="3.5"/>
+                <ellipse cx="314" cy="122" rx="9" ry="7" fill="#93C5FD"/>
+                <!-- Garrinhas simpáticas -->
+                <path d="M300 102L304 109M314 98L314 106M328 102L324 109" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
               </g>
             </g>
 
-            <g class="anim-selo-interno">
-              <polygon points="190,46 263,88 263,172 190,214 117,172 117,88" fill="none" stroke="url(#ouro-espelhado)" stroke-width="1.8" opacity="0.72"/>
-              <polygon points="190,214 263,172 263,88 190,46 117,88 117,172" fill="none" stroke="#34D399" stroke-width="1.4" opacity="0.6" transform="rotate(30 190 130)"/>
-            </g>
-
-            <!-- Elemento C: Talismãs Sagrados Ofuda & Moedas da Fortuna Flutuantes -->
-            <g class="anim-ofuda-esq" transform="translate(38, 52) rotate(-11)">
-              <rect x="0" y="0" width="28" height="60" rx="3" fill="#FFFBEB" stroke="url(#ouro-espelhado)" stroke-width="2.4"/>
-              <rect x="3.5" y="3.5" width="21" height="53" fill="none" stroke="#D91E2A" stroke-width="1.2"/>
-              <path d="M14 11V47M9 19H19M10 30H18M9 41H19" stroke="#991B1B" stroke-width="2.2" stroke-linecap="round"/>
-            </g>
-            <g class="anim-ofuda-dir" transform="translate(314, 48) rotate(11)">
-              <rect x="0" y="0" width="28" height="60" rx="3" fill="#FFFBEB" stroke="url(#ouro-espelhado)" stroke-width="2.4"/>
-              <rect x="3.5" y="3.5" width="21" height="53" fill="none" stroke="#D91E2A" stroke-width="1.2"/>
-              <path d="M14 11V47M9 19H19M10 30H18M9 41H19" stroke="#991B1B" stroke-width="2.2" stroke-linecap="round"/>
-            </g>
-
-            <!-- Elemento A: Cauda Listrada do Tigre com Balanço Suave -->
-            <g class="anim-cauda">
-              <path d="M252 188C285 184 306 156 298 130C292 112 274 116 272 130C270 142 280 152 260 166" fill="none" stroke="url(#pelagem-tigre)" stroke-width="16" stroke-linecap="round"/>
-              <path d="M278 166L289 158M287 146L300 142M284 127L295 120" stroke="#2D0C03" stroke-width="4.5" stroke-linecap="round"/>
-            </g>
-
-            <!-- Elemento A + C: Mascote Tigre Guardião com Colar de Jade, Guizo Suzu e Lingote Yuanbao -->
-            <g class="anim-respiracao">
-              <!-- Traje imperial de laca carmim e bordado de ouro -->
-              <path d="M132 156C126 180 130 214 138 224H242C250 214 254 180 248 156C236 138 144 138 132 156Z" fill="url(#laca-imperial)" stroke="url(#ouro-espelhado)" stroke-width="4"/>
-              <ellipse cx="190" cy="180" rx="34" ry="30" fill="#FFF5E0"/>
-              <path d="M152 154L165 220M228 154L215 220" stroke="url(#ouro-espelhado)" stroke-width="4" stroke-linecap="round"/>
-
-              <!-- Colar de Jade Imperial (B) + Grande Guizo Sagrado Suzu de Ouro (C) -->
-              <path d="M142 154Q190 174 238 154" fill="none" stroke="url(#jade-imperial)" stroke-width="7.5" stroke-linecap="round"/>
-              <circle cx="190" cy="166" r="13.5" fill="url(#ouro-espelhado)" stroke="#5C2E00" stroke-width="2.5"/>
-              <path d="M181 168H199M190 168V176" stroke="#4A2100" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="186" cy="162" r="3.5" fill="#FFFFFF" opacity="0.92"/>
-
-              <!-- Pata esquerda segurando Lingote de Ouro (Yuanbao) -->
-              <g transform="translate(104, 154)">
-                <path d="M6 26C18 14 48 14 60 26L52 46C42 54 24 54 14 46Z" fill="url(#ouro-espelhado)" stroke="#5E2F00" stroke-width="2.5"/>
-                <ellipse cx="33" cy="24" rx="22" ry="9" fill="#FFF7C2" stroke="#B86B09" stroke-width="2"/>
-                <ellipse cx="33" cy="20" rx="12" ry="7" fill="url(#ouro-profundo)"/>
-                <ellipse cx="26" cy="42" rx="15" ry="12" fill="url(#pelagem-tigre)" stroke="#4A1A03" stroke-width="2.5"/>
-                <circle cx="20" cy="40" r="3" fill="#FFF4DC"/>
-                <circle cx="27" cy="38" r="3" fill="#FFF4DC"/>
-                <circle cx="34" cy="40" r="3" fill="#FFF4DC"/>
-              </g>
-
-              <!-- Cabeça expressiva com olhos estilo anime/mascote e coroa de jade -->
-              <g class="anim-cabeca">
-                <g class="anim-orelha-esq">
-                  <circle cx="134" cy="66" r="22" fill="url(#pelagem-tigre)" stroke="#3D1302" stroke-width="3"/>
-                  <circle cx="134" cy="66" r="12" fill="#FFD8A8"/>
-                </g>
-                <g class="anim-orelha-dir">
-                  <circle cx="246" cy="66" r="22" fill="url(#pelagem-tigre)" stroke="#3D1302" stroke-width="3"/>
-                  <circle cx="246" cy="66" r="12" fill="#FFD8A8"/>
-                </g>
-
-                <path d="M124 108C124 70 150 48 190 48C230 48 256 70 256 108C262 134 242 158 190 158C138 158 118 134 124 108Z" fill="url(#pelagem-tigre)" stroke="#3D1302" stroke-width="3.5"/>
-                <path d="M126 116C126 100 146 98 162 110C176 100 204 100 218 110C234 98 254 100 254 116C256 140 232 156 190 156C148 156 124 140 126 116Z" fill="#FFF5E0"/>
-
-                <!-- Insígnia real "王" e listras -->
-                <path d="M176 60H204M180 69H200M174 78H206M190 60V78" stroke="#2D0C03" stroke-width="4.2" stroke-linecap="round"/>
-                <path d="M128 94L144 98M125 104L140 106M252 94L236 98M255 104L240 106" stroke="#2D0C03" stroke-width="4" stroke-linecap="round"/>
-
-                <!-- Coroa Imperial com Joia de Jade (B) -->
-                <path d="M154 52C162 32 218 32 226 52Z" fill="url(#laca-imperial)" stroke="url(#ouro-espelhado)" stroke-width="3"/>
-                <rect x="148" y="47" width="84" height="9" rx="4.5" fill="url(#ouro-espelhado)" stroke="#5C2E00" stroke-width="2"/>
-                <circle cx="190" cy="38" r="7.5" fill="url(#jade-imperial)" stroke="#FFF7C2" stroke-width="2"/>
-
-                <!-- Olhos com duplo brilho estelar (C) e piscada suave -->
-                <g class="anim-olhos">
-                  <ellipse cx="162" cy="100" rx="13" ry="15" fill="#1E0903"/>
-                  <ellipse cx="162" cy="100" rx="10" ry="12" fill="#D97706"/>
-                  <ellipse cx="162" cy="101" rx="6.5" ry="8" fill="#120502"/>
-                  <circle cx="158" cy="95" r="4.2" fill="#FFFFFF"/>
-                  <circle cx="166" cy="105" r="2.2" fill="#FEF08A"/>
-
-                  <ellipse cx="218" cy="100" rx="13" ry="15" fill="#1E0903"/>
-                  <ellipse cx="218" cy="100" rx="10" ry="12" fill="#D97706"/>
-                  <ellipse cx="218" cy="101" rx="6.5" ry="8" fill="#120502"/>
-                  <circle cx="214" cy="95" r="4.2" fill="#FFFFFF"/>
-                  <circle cx="222" cy="105" r="2.2" fill="#FEF08A"/>
-                </g>
-
-                <path d="M146 82Q162 74 174 82M206 82Q218 74 234 82" fill="none" stroke="#FFF4DC" stroke-width="5" stroke-linecap="round"/>
-
-                <!-- Blush suave e sorriso acolhedor -->
-                <ellipse cx="144" cy="116" rx="6.5" ry="3.2" fill="#FB7185" opacity="0.42"/>
-                <ellipse cx="236" cy="116" rx="6.5" ry="3.2" fill="#FB7185" opacity="0.42"/>
-                <path d="M182 112H198L190 121Z" fill="#E11D48"/>
-                <path d="M172 124Q190 144 208 124Z" fill="#7F1D1D" stroke="#2D0C03" stroke-width="2.5"/>
-                <path d="M180 132Q190 139 200 132" fill="#FB7185"/>
-                <path d="M166 120Q178 130 190 121Q202 130 214 120" fill="none" stroke="#2D0C03" stroke-width="3.2" stroke-linecap="round"/>
-                <path d="M176 125L179 131L182 125ZM198 125L201 131L204 125Z" fill="#FFFFFF"/>
-              </g>
-            </g>
-
-            <!-- Elemento A + C: Pata Direita em Gesto de Convite (Maneki) -->
-            <g class="anim-pata-convite">
-              <path d="M236 150C252 134 268 108 280 116C292 124 282 154 256 170Z" fill="url(#pelagem-tigre)" stroke="#3D1302" stroke-width="3"/>
-              <circle cx="274" cy="118" r="20" fill="#FFF5E0" stroke="#3D1302" stroke-width="3"/>
-              <ellipse cx="274" cy="122" rx="8" ry="6.5" fill="#FB7185"/>
-              <circle cx="264" cy="111" r="3.8" fill="#FB7185"/>
-              <circle cx="274" cy="108" r="4" fill="#FB7185"/>
-              <circle cx="284" cy="111" r="3.8" fill="#FB7185"/>
-            </g>
-
-            <!-- Elemento B: Nuvens Auspiciosas (Xiangyun) e Pedestal de Ouro Espelhado -->
-            <g class="anim-nuvens-base">
-              <path d="M52 224H136C146 224 152 215 149 206C146 198 136 196 129 201C124 189 108 186 98 194C89 186 74 188 69 199C58 196 46 203 44 215Z" fill="url(#laca-imperial)" stroke="url(#ouro-espelhado)" stroke-width="2.4"/>
-              <path d="M328 224H244C234 224 228 215 231 206C234 198 244 196 251 201C256 189 272 186 282 194C291 186 306 188 311 199C322 196 334 203 336 215Z" fill="url(#laca-imperial)" stroke="url(#ouro-espelhado)" stroke-width="2.4"/>
-            </g>
-            <path d="M74 222H306L294 240H86Z" fill="url(#ouro-espelhado)" stroke="#4A2100" stroke-width="2.5"/>
+            <!-- Camada 3: Pedestal Imperial em Ouro 24k Ultraespelhado -->
+            <path d="M74 242H346L332 264H88Z" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="3"/>
+            <rect x="96" y="247" width="228" height="4" rx="2" fill="#FFFFFF" opacity="0.85"/>
           </svg>
         </div>
 
@@ -215,15 +254,14 @@
       </header>
 
       <div class="acessos">
-        <!-- Cartão 1: Elemento A (Lingote de Ouro Imperial Yuanbao) -->
         <article class="cartao" aria-labelledby="acesso-1">
           <div class="topo-cartao">
             <span class="numero" aria-hidden="true">01</span>
             <span class="icone-tematico" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none">
-                <path d="M6 26C14 16 34 16 42 26L36 39C29 44 19 44 12 39L6 26Z" fill="url(#ouro-espelhado)" stroke="#5C2E00" stroke-width="2"/>
-                <ellipse cx="24" cy="24" rx="15" ry="6.5" fill="#FFF8CC" stroke="#9A5306" stroke-width="1.6"/>
-                <ellipse cx="24" cy="20" rx="8.5" ry="5" fill="#F59E0B"/>
+                <path d="M6 26C14 16 34 16 42 26L36 39C29 44 19 44 12 39L6 26Z" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2"/>
+                <ellipse cx="24" cy="24" rx="15" ry="6.5" fill="#FFFFFF" stroke="#9A5306" stroke-width="1.6"/>
+                <ellipse cx="24" cy="20" rx="8.5" ry="5" fill="url(#ouro-chanfro-vertical)"/>
               </svg>
             </span>
           </div>
@@ -232,7 +270,7 @@
           <a class="botao" href="https://sm8dzy.com/?pid=6942440235&amp;fromPage=AGENCY_ONE" target="_blank" rel="noopener noreferrer" aria-describedby="aviso-externo">
             <span class="botao-conteudo">
               <svg class="icone-cta" aria-hidden="true" viewBox="0 0 24 24" fill="none">
-                <path d="M3 17L6 8L12 13L18 8L21 17H3Z" fill="#2D0E00" stroke="#2D0E00" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M3 17L6 8L12 13L18 8L21 17H3Z" fill="#1F0C00" stroke="#1F0C00" stroke-width="1.5" stroke-linejoin="round"/>
               </svg>
               <span>Abrir acesso 1</span>
             </span>
@@ -240,15 +278,14 @@
           </a>
         </article>
 
-        <!-- Cartão 2: Elemento B (Pérola do Dragão em Jade & Círculo Bagua) -->
         <article class="cartao" aria-labelledby="acesso-2">
           <div class="topo-cartao">
             <span class="numero" aria-hidden="true">02</span>
             <span class="icone-tematico" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="18" stroke="url(#ouro-espelhado)" stroke-width="2.2" stroke-dasharray="5 3"/>
-                <circle cx="24" cy="24" r="12.5" fill="url(#jade-imperial)" stroke="#FFF9D2" stroke-width="2"/>
-                <circle cx="20" cy="20" r="3.5" fill="#FFFBEB"/>
+                <circle cx="24" cy="24" r="18" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2.2"/>
+                <circle cx="24" cy="24" r="13" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="4 2"/>
+                <rect x="18.5" y="18.5" width="11" height="11" rx="2" fill="#0B132B" stroke="#FFE875" stroke-width="2"/>
               </svg>
             </span>
           </div>
@@ -257,8 +294,8 @@
           <a class="botao" href="https://npcyog.com/?pid=2848417439&amp;fromPage=AGENCY_ONE" target="_blank" rel="noopener noreferrer" aria-describedby="aviso-externo">
             <span class="botao-conteudo">
               <svg class="icone-cta" aria-hidden="true" viewBox="0 0 24 24" fill="none">
-                <polygon points="12,2 22,12 12,22 2,12" fill="#2D0E00"/>
-                <circle cx="12" cy="12" r="3.5" fill="#FFE268"/>
+                <polygon points="12,2 22,12 12,22 2,12" fill="#1F0C00"/>
+                <circle cx="12" cy="12" r="3.5" fill="#FFF7C4"/>
               </svg>
               <span>Abrir acesso 2</span>
             </span>
@@ -266,15 +303,13 @@
           </a>
         </article>
 
-        <!-- Cartão 3: Elemento C (Talismã Sagrado Ofuda & Moeda Koban) -->
         <article class="cartao" aria-labelledby="acesso-3">
           <div class="topo-cartao">
             <span class="numero" aria-hidden="true">03</span>
             <span class="icone-tematico" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none">
-                <rect x="14" y="6" width="20" height="36" rx="3" fill="#FFFBEB" stroke="url(#ouro-espelhado)" stroke-width="2.4"/>
-                <rect x="17.5" y="9.5" width="13" height="29" fill="none" stroke="#D91E2A" stroke-width="1.4"/>
-                <path d="M24 14V34M20 19H28M20 26H28" stroke="#991B1B" stroke-width="2.2" stroke-linecap="round"/>
+                <polygon points="24,5 29.5,16.5 42,18.2 33,27 35.2,39.5 24,33.5 12.8,39.5 15,27 6,18.2 18.5,16.5" fill="url(#ouro-ultraespelhado)" stroke="#3D1C00" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="24" cy="24" r="5" fill="#FFFFFF"/>
               </svg>
             </span>
           </div>
@@ -283,8 +318,7 @@
           <a class="botao" href="https://gcx27r.com/?pid=2744555209&amp;fromPage=AGENCY_ONE" target="_blank" rel="noopener noreferrer" aria-describedby="aviso-externo">
             <span class="botao-conteudo">
               <svg class="icone-cta" aria-hidden="true" viewBox="0 0 24 24" fill="none">
-                <rect x="6" y="3" width="12" height="18" rx="2" stroke="#2D0E00" stroke-width="2.2"/>
-                <path d="M12 7V17M9 11H15" stroke="#2D0E00" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 2L14.9 8.2L21.7 9.1L16.7 13.9L17.9 20.7L12 17.5L6.1 20.7L7.3 13.9L2.3 9.1L9.1 8.2L12 2Z" fill="#1F0C00"/>
               </svg>
               <span>Abrir acesso 3</span>
             </span>
